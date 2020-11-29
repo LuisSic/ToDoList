@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-column: full-start / full-end;
+  &-logo {
+    height: 6.5rem;
+    margin-left: 2.5rem;
+  }
+  &__page-options {
+    height: 100%;
+    .btn__header {
+      //margin-right: 20rem;
+      color: $color-primary;
+      background-color: transparent;
+      height: 100%;
+
+      &:hover {
+        background-color: $color-grey-dark-2;
+
+        &::after {
+          background-color: $color-primary;
+          height: 1.5px;
+          width: 100%;
+          content: '';
+          display: block;
+        }
+      }
+    }
+  }
+}

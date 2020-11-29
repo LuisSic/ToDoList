@@ -1,0 +1,15 @@
+.main-foto {
+  grid-column: full-start / full-end;
+  background-image: linear-gradient(
+      rgba($color-primary, 0.25),
+      rgba($color-primary, 0.25)
+    ),
+    url(../img/foto-1.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
