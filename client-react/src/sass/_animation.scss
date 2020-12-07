@@ -1,0 +1,10 @@
+@keyframes costumersToLeft {
+  0% {
+    left: 0;
+    background: blue;
+  }
+  100% {
+    left: 100%;
+    background: red;
+  }
+}

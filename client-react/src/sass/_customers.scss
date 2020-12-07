@@ -1,4 +1,43 @@
 .customers {
-  background-color: red;
   grid-column: center-start / center-end;
+  margin: 10rem 0;
+  display: grid;
+  grid-template-rows: repeat(6, minmax(5rem, 8rem));
+  grid-template-columns: repeat(6, minmax(5rem, 1fr));
+
+  &__container {
+    grid-row: 1 / -1;
+    grid-column: 1 /7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2rem;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    img {
+      max-height: 8rem;
+      max-width: 100%;
+    }
+  }
+
+  &__description {
+    color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &--main {
+      display: block;
+      font-size: 2.5rem;
+    }
+
+    &--sub {
+      display: block;
+      font-size: 4rem;
+    }
+  }
 }
