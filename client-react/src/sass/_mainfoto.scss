@@ -7,9 +7,13 @@
     url(../img/foto-1.jpg);
   background-size: cover;
   background-position: center;
-  height: 85vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .heading-1,
+  .heading-2 {
+    color: #fff;
+  }
 }

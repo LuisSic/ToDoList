@@ -16,8 +16,12 @@
     border-radius: 2rem;
   }
   &__list {
-    display: flex;
-    justify-content: space-around;
+    //display: flex;
+    //justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    row-gap: 5rem;
     width: 100%;
     img {
       max-height: 8rem;

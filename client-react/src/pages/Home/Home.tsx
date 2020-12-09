@@ -7,7 +7,19 @@ import apple from '../../img/apple-black.png';
 import google from '../../img/google-1-1.png';
 import nike from '../../img/nike-3.png';
 import puma from '../../img/puma-logo.png';
+import girl from '../../img/Girl.png';
 import { ReactComponent as Add } from '../../img/add-outline.svg';
+import { ReactComponent as Alert } from '../../img/alert-circle-outline.svg';
+import { ReactComponent as Chatbox } from '../../img/chatbox-outline.svg';
+import { ReactComponent as Checkmark } from '../../img/checkmark-circle-outline.svg';
+import { ReactComponent as Flag } from '../../img/flag-outline.svg';
+import { ReactComponent as Heart } from '../../img/heart-outline.svg';
+import { ReactComponent as List } from '../../img/list-outline.svg';
+import { ReactComponent as Notifications } from '../../img/notifications-outline.svg';
+import { ReactComponent as Person } from '../../img/person-add-outline.svg';
+import { ReactComponent as Refresh } from '../../img/refresh-outline.svg';
+import { ReactComponent as Settings } from '../../img/settings-outline.svg';
+import { ReactComponent as Chart } from '../../img/stats-chart-outline.svg';
 
 const Home = () => {
   return (
@@ -39,12 +51,10 @@ const Home = () => {
       </section>
       <section className="features">
         <div className="features__header">
-          <h1 className="heading-1">From overwhelmed to on top of it</h1>
-          <p className="features__header--text">
-            Todoist gives you the confidence that everything’s organized and
-            accounted for, so you can make progress on the things that are
-            important to you.
-          </p>
+          <h2 className="heading-2 features__header--center">
+            Features that people love
+          </h2>
+          <img src={girl} alt="girl" className="features__header--img" />
         </div>
         <div className="feature__header">
           <h3 className="heading-3">
@@ -55,73 +65,94 @@ const Home = () => {
           <Add className="feature__icon" />
           <h4 className="heading-4">Quick Add</h4>
           <p className="feature__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            sequi repudiandae accusamus rem quod temporibus doloribus, tenetur
-          </p>
-        </div>
-        <div className="feature">
-          <Add className="feature__icon" />
-          <h4 className="heading-4">Quick Add</h4>
-          <p className="feature__text">
             lets you capture and organize tasks in seconds
           </p>
         </div>
         <div className="feature">
-          <Add className="feature__icon" />
-          <h4 className="heading-4">Quick Add</h4>
+          <Refresh className="feature__icon" />
+          <h4 className="heading-4">Recurring due dates</h4>
           <p className="feature__text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti
-            dicta nemo tempore quibusdam provident autem repellendus, esse quas
-            possimus illum vel quos? At voluptates sapiente quam provident quo
-            distinctio qui.
+            help you remember deadlines and build habits.
+          </p>
+        </div>
+        <div className="feature">
+          <Alert className="feature__icon" />
+          <h4 className="heading-4">Task View</h4>
+          <p className="feature__text">
+            gives you the complete picture of any task.
           </p>
         </div>
         <div className="feature__header">
           <h3 className="heading-3">Focus your energy on the right things</h3>
         </div>
         <div className="feature">
-          <Add className="feature__icon" />
-          <h4 className="heading-4">Quick Add</h4>
+          <Heart className="feature__icon" />
+          <h4 className="heading-4">Favorites</h4>
           <p className="feature__text">
-            lets you capture and organize tasks in seconds
+            keep key projects, labels, or filters top of mind.
           </p>
         </div>
         <div className="feature">
-          <Add className="feature__icon" />
-          <h4 className="heading-4">Quick Add</h4>
+          <List className="feature__icon" />
+          <h4 className="heading-4">Sections & subtasks</h4>
           <p className="feature__text">
-            lets you capture and organize tasks in seconds
+            ensure that your projects stay neatly organized.
           </p>
         </div>
         <div className="feature">
-          <Add className="feature__icon" />
-          <h4 className="heading-4">Quick Add</h4>
+          <Flag className="feature__icon" />
+          <h4 className="heading-4">Priorities</h4>
           <p className="feature__text">
-            lets you capture and organize tasks in seconds
+            highlight the day’s most important tasks.
           </p>
         </div>
         <div className="feature__header">
           <h3 className="heading-3">Share the workload</h3>
         </div>
         <div className="feature">
-          <Add className="feature__icon" />
-          <h4 className="heading-4">Quick Add</h4>
+          <Person className="feature__icon" />
+          <h4 className="heading-4">Delegate tasks</h4>
           <p className="feature__text">
-            lets you capture and organize tasks in seconds
+            to project collaborators and free up your mental space.
           </p>
         </div>
         <div className="feature">
-          <Add className="feature__icon" />
-          <h4 className="heading-4">Quick Add</h4>
+          <Notifications className="feature__icon" />
+          <h4 className="heading-4">Notifications</h4>
           <p className="feature__text">
-            lets you capture and organize tasks in seconds
+            let you know when people post comments, complete tasks, and more.
           </p>
         </div>
         <div className="feature">
-          <Add className="feature__icon" />
-          <h4 className="heading-4">Quick Add</h4>
+          <Chatbox className="feature__icon" />
+          <h4 className="heading-4">Task & project comments</h4>
           <p className="feature__text">
-            lets you capture and organize tasks in seconds
+            make essential information accessible to everyone.
+          </p>
+        </div>
+        <div className="feature__header">
+          <h3 className="heading-3">See tangible progress</h3>
+        </div>
+        <div className="feature">
+          <Settings className="feature__icon" />
+          <h4 className="heading-4">Todoist Karma</h4>
+          <p className="feature__text">
+            awards you points for completing tasks and maintaining your streaks.
+          </p>
+        </div>
+        <div className="feature">
+          <Chart className="feature__icon" />
+          <h4 className="heading-4">Productivity visualizations</h4>
+          <p className="feature__text">
+            display your daily & monthly progress in color-coded graphs.
+          </p>
+        </div>
+        <div className="feature">
+          <Checkmark className="feature__icon" />
+          <h4 className="heading-4">Completed tasks</h4>
+          <p className="feature__text">
+            help you keep track of all that you’ve accomplished in any given
+            project.
           </p>
         </div>
       </section>
