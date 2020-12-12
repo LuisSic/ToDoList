@@ -1,0 +1,36 @@
+.slogan {
+  grid-column: full-start / full-end;
+  //background-color: $color-white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 5rem 0;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75rem;
+  }
+  &__photo {
+    &--2 {
+      height: 40rem;
+      width: 60rem;
+    }
+  }
+  .heading-2 {
+    color: $color-blue-secondary;
+  }
+
+  .heading-1 {
+    color: $color-blue-primary;
+    text-align: center;
+    &--main {
+      display: inline-block;
+    }
+
+    &--sub {
+      display: inline-block;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 .features {
   grid-column: center-start / center-end;
-  margin: 5rem 0 10rem;
-
+  //margin: 5rem 0 10rem;
+  //background-color: $color-white;
   display: grid;
   //grid-template-columns: repeat(4, 1fr);
   grid-template-columns: repeat(4, minmax(15rem, 1fr));
@@ -54,6 +54,6 @@
       transform: translateY(-1.2rem) scale(1.05);
     }
 
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.25);
+    //box-shadow: 0 1.5rem 4rem rgba($color-black, 0.25);
   }
 }

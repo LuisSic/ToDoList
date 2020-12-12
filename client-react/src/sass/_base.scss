@@ -1,8 +1,9 @@
 // COLOR VARIABLES
 
-$color-primary: #273c75;
-$color-grey-dark-2: #f4f2f2;
-$color-black: #000;
+$color-purple-primary: #686de0;
+$color-blue-primary: #14274e;
+$color-blue-secondary: #394867;
+$color-white: #f1f6f9;
 // FONT VARIABLES
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
@@ -25,6 +26,7 @@ body {
   //color: #f4f2f2;
   font-weight: 300;
   line-height: 1.6;
+  background-color: $color-white;
 }
 
 .container {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button';
-import Logo from '../../img/Logo-5.png';
+import Logo from '../../img/Logo-9.png';
 
 const Header = () => {
   return (
@@ -9,7 +9,22 @@ const Header = () => {
       <div className="header__page-options">
         <Button
           className="btn btn__header"
+          text="Premium"
+          callback={() => console.log('click')}
+        />
+        <Button
+          className="btn btn__header"
+          text="For Teams"
+          callback={() => console.log('click')}
+        />
+        <Button
+          className="btn btn__header"
           text="Meet the Team"
+          callback={() => console.log('click')}
+        />
+        <Button
+          className="btn btn__header"
+          text="Support"
           callback={() => console.log('click')}
         />
         <Button

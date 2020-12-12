@@ -1,45 +1,81 @@
 .customers {
-  grid-column: center-start / center-end;
-  margin: 10rem 0;
+  grid-column: full-start / full-end;
+  //background-color: $color-white;
   display: grid;
-  grid-template-rows: repeat(6, minmax(5rem, 8rem));
-  grid-template-columns: repeat(6, minmax(5rem, 1fr));
+  grid-template-rows: repeat(5, 8vw);
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 10rem;
 
-  &__container {
-    grid-row: 1 / -1;
-    grid-column: 1 /7;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
-    border-radius: 2rem;
+  &__item {
+    &--1 {
+      grid-row: 3 / 4;
+      grid-column: 3 / 4;
+    }
+
+    &--2 {
+      grid-row: 3 / 4;
+      grid-column: 4 / 5;
+    }
+
+    &--3 {
+      grid-row: 4 / 5;
+      grid-column: 2 / 3;
+    }
+
+    &--4 {
+      grid-row: 4 / 5;
+      grid-column: 3 / 4;
+    }
+
+    &--5 {
+      grid-row: 4 / 5;
+      grid-column: 4 / 5;
+    }
+    &--6 {
+      grid-row: 4 / 5;
+      grid-column: 5 / 6;
+    }
+    &--7 {
+      grid-row: 5 / 6;
+      grid-column: 3 / 4;
+    }
+    &--8 {
+      grid-row: 5 / 6;
+      grid-column: 4 / 5;
+    }
   }
-  &__list {
-    //display: flex;
-    //justify-content: space-around;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-items: center;
-    row-gap: 5rem;
-    width: 100%;
-    img {
-      max-height: 8rem;
-      max-width: 100%;
+
+  &__img {
+    height: 10rem;
+    width: 15rem;
+    object-fit: cover;
+    display: block;
+    path {
+      filter: grayscale(100%) brightness(0);
+      fill-opacity: 0.2;
+    }
+    transition: all 0.3s;
+    &:hover {
+      transform: translateY(-1.2rem) scale(1.05);
     }
   }
 
   &__description {
-    color: $color-primary;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    //color: $color-primary;
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+    text-align: center;
     &--main {
+      color: $color-blue-primary;
       display: block;
       font-size: 2.5rem;
     }
 
     &--sub {
+      color: $color-blue-secondary;
       display: block;
       font-size: 4rem;
     }

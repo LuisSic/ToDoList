@@ -1,13 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import intel from '../../img/intel.png';
-import at from '../../img/at-t-4.png';
-import apple from '../../img/apple-black.png';
-import google from '../../img/google-1-1.png';
-import nike from '../../img/nike-3.png';
-import puma from '../../img/puma-logo.png';
-import girl from '../../img/Girl.png';
 import { ReactComponent as Add } from '../../img/add-outline.svg';
 import { ReactComponent as Alert } from '../../img/alert-circle-outline.svg';
 import { ReactComponent as Chatbox } from '../../img/chatbox-outline.svg';
@@ -20,41 +13,37 @@ import { ReactComponent as Person } from '../../img/person-add-outline.svg';
 import { ReactComponent as Refresh } from '../../img/refresh-outline.svg';
 import { ReactComponent as Settings } from '../../img/settings-outline.svg';
 import { ReactComponent as Chart } from '../../img/stats-chart-outline.svg';
+import { ReactComponent as Photo1 } from '../../img/photo-1.svg';
+import { ReactComponent as Photo2 } from '../../img/photo-2.svg';
+import { ReactComponent as Linkedin } from '../../img/linkedin.svg';
+import { ReactComponent as Microsoft } from '../../img/microsoft.svg';
+import { ReactComponent as Tesla } from '../../img/tesla-9.svg';
+import { ReactComponent as Xbox } from '../../img/xbox-2.svg';
+import { ReactComponent as Facebook } from '../../img/facebook-1.svg';
+import { ReactComponent as Stripe } from '../../img/stripe-3.svg';
+import { ReactComponent as Youtube } from '../../img/youtube.svg';
+import { ReactComponent as Sendgrid } from '../../img/sendgrid-2.svg';
 
 const Home = () => {
   return (
     <>
       <Header />
-      <div className="main-foto">
-        <h1 className="heading-1">Organize it all with To Do</h1>
-        <h2 className="heading-2">The all-in-one-to-do</h2>
-      </div>
-      <section className="customers">
-        <div className="customers__container">
-          <p className="customers__description">
-            <span className="customers__description--main">
-              ToDo has helped millions of people complete
-            </span>
-            <span className="customers__description--sub">
-              over 1.5 billion tasks in 150+ million projects.
-            </span>
-          </p>
-          <div className="customers__list">
-            <img src={intel} alt="Intel" className="customers--img-1" />
-            <img src={at} alt="At" />
-            <img src={google} alt="Google" />
-            <img src={apple} alt="Apple" />
-            <img src={nike} alt="Nike" />
-            <img src={puma} alt="Puma" />
-          </div>
+      <div className="slogan">
+        <Photo2 className="slogan__photo--2" />
+        <div className="slogan__text">
+          <h1 className="heading-1">
+            <span className="heading-1--main">Organize it all</span>
+            <span className="heading-1--sub">with To Do</span>
+          </h1>
+          <h2 className="heading-2">The all-in-one-to-do</h2>
         </div>
-      </section>
+      </div>
       <section className="features">
         <div className="features__header">
           <h2 className="heading-2 features__header--center">
             Features that people love
           </h2>
-          <img src={girl} alt="girl" className="features__header--img" />
+          <Photo1 className="features__header--img" />
         </div>
         <div className="feature__header">
           <h3 className="heading-3">
@@ -156,6 +145,29 @@ const Home = () => {
           </p>
         </div>
       </section>
+      <section className="customers">
+        <p className="customers__description">
+          <span className="customers__description--main">
+            ToDo has helped millions of people complete
+          </span>
+          <span className="customers__description--sub">
+            over 1.5 billion tasks in 150+ million projects.
+          </span>
+        </p>
+
+        <Linkedin className="customers__item--1 customers__img" />
+        <Microsoft className="customers__item--2 customers__img" />
+        <Xbox className="customers__item--3 customers__img" />
+        <Stripe className="customers__item--4 customers__img" />
+
+        <Tesla className="customers__item--5 customers__img" />
+
+        <Facebook className="customers__item--6 customers__img" />
+        <Youtube className="customers__item--7 customers__img" />
+
+        <Sendgrid className="customers__item--8 customers__img" />
+      </section>
+
       <Footer />
     </>
   );

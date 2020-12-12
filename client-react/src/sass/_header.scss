@@ -1,25 +1,25 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   grid-column: full-start / full-end;
+  background-color: $color-blue-primary;
   &-logo {
-    height: 6.5rem;
-    margin-left: 2.5rem;
+    //height: 10rem;
   }
   &__page-options {
-    height: 100%;
+    //height: 100%;
+    display: flex;
+    align-items: center;
     .btn__header {
-      color: $color-primary;
+      color: $color-white;
       background-color: transparent;
-      height: 100%;
+      //padding-top: 3rem;
 
       &:hover {
-        background-color: $color-grey-dark-2;
-
         &::after {
-          background-color: #686de0;
-          height: 1.5px;
+          background-color: $color-purple-primary;
+          height: 0.8px;
           width: 100%;
           content: '';
           display: block;
