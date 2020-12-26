@@ -4,26 +4,17 @@
   justify-content: space-around;
   grid-column: full-start / full-end;
   background-color: $color-blue-primary;
-  &-logo {
-    //height: 10rem;
-  }
+
   &__page-options {
-    //height: 100%;
     display: flex;
     align-items: center;
-    .btn__header {
-      color: $color-white;
-      background-color: transparent;
-      //padding-top: 3rem;
+    align-self: stretch;
 
+    .btn__header {
+      height: 100%;
+      background-color: transparent;
       &:hover {
-        &::after {
-          background-color: $color-purple-primary;
-          height: 0.8px;
-          width: 100%;
-          content: '';
-          display: block;
-        }
+        background-color: #51618b;
       }
     }
   }

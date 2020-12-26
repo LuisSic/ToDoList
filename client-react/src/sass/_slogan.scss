@@ -1,10 +1,8 @@
 .slogan {
   grid-column: full-start / full-end;
-  //background-color: $color-white;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-
   padding: 5rem 0;
   &__text {
     display: flex;
@@ -12,9 +10,19 @@
     align-items: center;
     width: 75rem;
   }
+
+  &-btn {
+    background-color: $color-purple-primary;
+    border-radius: 1.5rem;
+    margin-top: 2rem;
+    transition: all 0.2s;
+    &:hover {
+      background-color: $color-purple-dark;
+    }
+  }
   &__photo {
     &--2 {
-      height: 40rem;
+      height: 45rem;
       width: 60rem;
     }
   }
@@ -25,12 +33,5 @@
   .heading-1 {
     color: $color-blue-primary;
     text-align: center;
-    &--main {
-      display: inline-block;
-    }
-
-    &--sub {
-      display: inline-block;
-    }
   }
 }

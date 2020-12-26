@@ -30,9 +30,10 @@
 .btn {
   outline: none;
   font-family: $font-display;
+  color: $color-white;
   border: none;
   font-size: 1.5rem;
-  //text-transform: uppercase;
+  text-transform: uppercase;
   padding: 1.5rem 3rem;
   cursor: pointer;
 }

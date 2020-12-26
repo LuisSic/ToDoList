@@ -1,9 +1,11 @@
 // COLOR VARIABLES
 
-$color-purple-primary: #686de0;
-$color-blue-primary: #14274e;
-$color-blue-secondary: #394867;
-$color-white: #f1f6f9;
+$color-purple-primary: #7971ea;
+$color-purple-dark: #493ed0;
+$color-blue-primary: #1a2c5b;
+$color-blue-secondary: #3e4e88;
+$color-white: rgb(255, 255, 255);
+$color-white-dark: #f1f6f9;
 // FONT VARIABLES
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
@@ -23,10 +25,8 @@ html {
 
 body {
   font-family: $font-primary;
-  //color: #f4f2f2;
   font-weight: 300;
   line-height: 1.6;
-  background-color: $color-white;
 }
 
 .container {
