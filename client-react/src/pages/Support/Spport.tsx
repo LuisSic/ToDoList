@@ -9,7 +9,45 @@ import { ReactComponent as Card } from '../../img/card-outline.svg';
 import { ReactComponent as Rocket } from '../../img/rocket-outline.svg';
 import { ReactComponent as Bulb } from '../../img/bulb-outline.svg';
 import { ReactComponent as Plane } from '../../img/paper-plane-outline.svg';
+
+const topicList = [
+  {
+    text: 'Common Issues',
+    svgImage: <Settings className="topic__icon" />,
+  },
+  {
+    text: 'Bug Report',
+    svgImage: <Bug className="topic__icon" />,
+  },
+  {
+    text: 'Purchasing',
+    svgImage: <Card className="topic__icon" />,
+  },
+  {
+    text: 'Using ToDoList',
+    svgImage: <Plane className="topic__icon" />,
+  },
+  {
+    text: 'Feature Request',
+    svgImage: <Bulb className="topic__icon" />,
+  },
+  {
+    text: 'Getting Started',
+    svgImage: <Rocket className="topic__icon" />,
+  },
+];
+
 const Support = () => {
+  const render = topicList.map((topic, index) => {
+    return (
+      <div className="topic" key={index}>
+        {topic.svgImage}
+        <h4 className="heading-4">{topic.text}</h4>
+        <div className="topic__line"></div>
+      </div>
+    );
+  });
+
   return (
     <>
       <Header />
@@ -32,38 +70,7 @@ const Support = () => {
           <h3 className="heading-3">What Can We Help You With?</h3>
         </div>
       </div>
-      <div className="topics">
-        <div className="topic">
-          <Settings className="topic__icon" />
-          <h4 className="heading-4">Common Issues</h4>
-          <div className="topic__line"></div>
-        </div>
-        <div className="topic">
-          <Bug className="topic__icon" />
-          <h4 className="heading-4">Bug Report</h4>
-          <div className="topic__line"></div>
-        </div>
-        <div className="topic">
-          <Card className="topic__icon" />
-          <h4 className="heading-4">Purchasing</h4>
-          <div className="topic__line"></div>
-        </div>
-        <div className="topic">
-          <Plane className="topic__icon" />
-          <h4 className="heading-4">Using ToDoList</h4>
-          <div className="topic__line"></div>
-        </div>
-        <div className="topic">
-          <Bulb className="topic__icon" />
-          <h4 className="heading-4">Feature Request</h4>
-          <div className="topic__line"></div>
-        </div>
-        <div className="topic">
-          <Rocket className="topic__icon" />
-          <h4 className="heading-4">Getting Started</h4>
-          <div className="topic__line"></div>
-        </div>
-      </div>
+      <div className="topics">{render}</div>
       <Footer />
     </>
   );
