@@ -1,0 +1,83 @@
+.support {
+  grid-column: full-start / full-end;
+  padding: 5rem 5rem 0;
+
+  transition: background-color 10s cubic-bezier(0.2, 0.8, 0.2, 1);
+  &__main {
+    display: flex;
+    justify-content: center;
+    &--img {
+      height: 40rem;
+      width: 80rem;
+    }
+
+    &--text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 0 0;
+    gap: 2.5rem;
+
+    &-line {
+      width: 20rem;
+      height: 2px;
+      background-color: rgb(98, 110, 227);
+    }
+  }
+
+  .heading-1,
+  .heading-2,
+  .heading-3,
+  .heading-4 {
+    color: $color-blue-primary;
+  }
+}
+.topics {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  margin: 10rem;
+  gap: 2.5rem;
+}
+.topic {
+  display: flex;
+  background-color: $color-white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(50, 50, 93, 0.1) 2px 2px 4px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  padding-top: 2rem;
+  &__icon {
+    width: 4rem;
+    color: $color-purple-primary;
+  }
+
+  &__line {
+    border-radius: 4px;
+    align-self: flex-end;
+    width: 100%;
+    height: 4px;
+    background-color: $color-white-dark;
+  }
+
+  &:hover {
+    .topic__line {
+      background-color: $color-purple-dark;
+    }
+  }
+
+  .heading-4 {
+    padding: 2.5rem;
+  }
+}

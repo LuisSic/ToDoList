@@ -1,38 +1,44 @@
 import React from 'react';
 import Button from '../Button/Button';
 import Logo from '../../img/Logo-9.png';
-
+import history from '../../helper/history';
+const buttonsHeader = [
+  {
+    text: 'Premium',
+    callback: (): void => history.push('/'),
+  },
+  {
+    text: 'For Teams',
+    callback: (): void => history.push('/'),
+  },
+  {
+    text: 'Meet the Team',
+    callback: (): void => history.push('/team'),
+  },
+  {
+    text: 'Support',
+    callback: (): void => history.push('/support'),
+  },
+  {
+    text: 'Login',
+    callback: (): void => history.push('/'),
+  },
+];
 const Header = () => {
+  const render = buttonsHeader.map((item, index) => {
+    return (
+      <Button
+        className="btn btn__header"
+        text={item.text}
+        callback={item.callback}
+        key={index}
+      />
+    );
+  });
   return (
     <header className="header">
       <img src={Logo} alt="ToDo logo" className="header-logo"></img>
-      <div className="header__page-options">
-        <Button
-          className="btn btn__header"
-          text="Premium"
-          callback={() => console.log('click')}
-        />
-        <Button
-          className="btn btn__header"
-          text="For Teams"
-          callback={() => console.log('click')}
-        />
-        <Button
-          className="btn btn__header"
-          text="Meet the Team"
-          callback={() => console.log('click')}
-        />
-        <Button
-          className="btn btn__header"
-          text="Support"
-          callback={() => console.log('click')}
-        />
-        <Button
-          className="btn btn__header"
-          text="Login"
-          callback={() => console.log('click')}
-        />
-      </div>
+      <div className="header__page-options">{render}</div>
     </header>
   );
 };
