@@ -4,12 +4,12 @@ import Logo from '../../img/Logo-9.png';
 import history from '../../helper/history';
 const buttonsHeader = [
   {
-    text: 'Premium',
+    text: 'Home',
     callback: (): void => history.push('/'),
   },
   {
-    text: 'For Teams',
-    callback: (): void => history.push('/'),
+    text: 'Premium',
+    callback: (): void => history.push('/pricing'),
   },
   {
     text: 'Meet the Team',

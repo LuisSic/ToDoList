@@ -37,7 +37,7 @@ const topicList = [
   },
 ];
 
-const Support = () => {
+export const Support = () => {
   const render = topicList.map((topic, index) => {
     return (
       <div className="topic" key={index}>
@@ -57,7 +57,7 @@ const Support = () => {
             <h1 className="heading-1">Still Lost?</h1>
             <h1 className="heading-1">We're here for you</h1>
             <Button
-              className="btn slogan-btn"
+              className="btn primary--btn"
               text="Contact Us"
               callback={() => console.log('click')}
             />
@@ -75,5 +75,3 @@ const Support = () => {
     </>
   );
 };
-
-export default Support;

@@ -69,7 +69,7 @@ const teamMembers = [
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus error, quis perferendis cum corrupti necessitatibus esse autem magnam provident unde nemo nihil repellendus quod aut porro velvero. Dolores, similique.',
   },
 ];
-const Team = () => {
+export const Team = () => {
   const render = teamMembers.map((teamMember, index) => {
     return (
       <div className={`team__group group--${index}`} key={index}>
@@ -92,5 +92,3 @@ const Team = () => {
     </>
   );
 };
-
-export default Team;

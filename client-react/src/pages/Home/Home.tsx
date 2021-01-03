@@ -26,7 +26,7 @@ import { ReactComponent as Netflix } from '../../img/netflix-2015-logo.svg';
 import { ReactComponent as Youtube } from '../../img/youtube.svg';
 import { ReactComponent as Sendgrid } from '../../img/sendgrid-2.svg';
 
-const Home = () => {
+export const Home = () => {
   return (
     <>
       <Header />
@@ -157,5 +157,3 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;

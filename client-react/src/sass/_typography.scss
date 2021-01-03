@@ -37,3 +37,12 @@
   padding: 1.5rem 3rem;
   cursor: pointer;
 }
+
+.primary--btn {
+  background-color: $color-purple-primary;
+  border-radius: 1.5rem;
+  transition: all 0.2s;
+  &:hover {
+    background-color: $color-purple-dark;
+  }
+}
