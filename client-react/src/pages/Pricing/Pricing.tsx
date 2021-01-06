@@ -16,7 +16,7 @@ export const Pricing = () => {
           <Free className="plan__svg" />
           <h3 className="heading-3">Free</h3>
           <p>For Starters</p>
-          <h3 className="heading-3">$0</h3>
+          <h1 className="heading-1">$0</h1>
           <Button
             className="btn plan--btn"
             text="Get Stated"
@@ -41,7 +41,7 @@ export const Pricing = () => {
           <Update className="plan__svg" />
           <h3 className="heading-3">Premium</h3>
           <p>For Pros</p>
-          <h3 className="heading-3">$3</h3>
+          <h1 className="heading-1">$3</h1>
           <Button
             className="btn plan--btn"
             text="Upgrade Now"
@@ -82,7 +82,7 @@ export const Pricing = () => {
           <Teams className="plan__svg" />
           <h3 className="heading-3">Business</h3>
           <p>For Teams</p>
-          <h3 className="heading-3">$5</h3>
+          <h1 className="heading-1">$5</h1>
           <Button
             className="btn plan--btn"
             text="Try For Free"
