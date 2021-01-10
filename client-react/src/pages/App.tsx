@@ -10,10 +10,12 @@ import { Pricing } from '../pages/Pricing/Pricing';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { Routes } from '../Routes';
-
+import { ScrollToTopControlller } from '../components/Scroll/ScrollTop';
+import { ScrollArrow } from '../components/Scroll/ScrollArrow';
 const App = () => {
   return (
     <Router history={history}>
+      <ScrollToTopControlller />
       <Header />
       <Switch>
         <Route exact path={Routes.PRICING} component={Pricing} />
@@ -23,6 +25,7 @@ const App = () => {
         <Route path={Routes.HOME} component={Home} />
       </Switch>
       <Footer />
+      <ScrollArrow />
     </Router>
   );
 };
