@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as LogoLinkInd } from '../../img/logo-linkedin.svg';
+import { ReactComponent as LogoLinkInd } from '../../img/team/logo-linkedin.svg';
 interface CardProfileProps {
   mainTitle: string;
   subTitle: string;

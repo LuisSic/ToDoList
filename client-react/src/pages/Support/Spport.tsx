@@ -1,14 +1,12 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
-import { ReactComponent as Settings } from '../../img/settings-outline.svg';
-import { ReactComponent as Bug } from '../../img/bug-outline.svg';
-import { ReactComponent as Question } from '../../img/question.svg';
-import { ReactComponent as Card } from '../../img/card-outline.svg';
-import { ReactComponent as Rocket } from '../../img/rocket-outline.svg';
-import { ReactComponent as Bulb } from '../../img/bulb-outline.svg';
-import { ReactComponent as Plane } from '../../img/paper-plane-outline.svg';
+import { ReactComponent as Settings } from '../../img/features/settings-outline.svg';
+import { ReactComponent as Bug } from '../../img/support/bug-outline.svg';
+import { ReactComponent as Question } from '../../img/support/question.svg';
+import { ReactComponent as Card } from '../../img/support/card-outline.svg';
+import { ReactComponent as Rocket } from '../../img/support/rocket-outline.svg';
+import { ReactComponent as Bulb } from '../../img/support/bulb-outline.svg';
+import { ReactComponent as Plane } from '../../img/support/paper-plane-outline.svg';
 
 const topicList = [
   {
@@ -50,7 +48,6 @@ export const Support = () => {
 
   return (
     <>
-      <Header />
       <div className="support">
         <div className="support__main">
           <div className="support__main--text">
@@ -71,7 +68,6 @@ export const Support = () => {
         </div>
       </div>
       <div className="topics">{render}</div>
-      <Footer />
     </>
   );
 };

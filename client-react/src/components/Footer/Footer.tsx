@@ -1,15 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Routes } from '../../Routes';
 
 const itemsNavBar = [
-  { to: '/support', text: 'Contact Us' },
-  { to: '/support', text: 'Faq' },
-  { to: '/', text: 'Reviews' },
-  { to: '/', text: 'Blog' },
-  { to: '/', text: 'Legal Stuff' },
-  { to: '/', text: 'Private Policy' },
+  { to: Routes.SUPPORT, text: 'Contact Us' },
+  { to: Routes.SUPPORT, text: 'Faq' },
+  { to: Routes.HOME, text: 'Reviews' },
+  { to: Routes.HOME, text: 'Blog' },
+  { to: Routes.HOME, text: 'Legal Stuff' },
+  { to: Routes.HOME, text: 'Private Policy' },
 ];
-const Footer = () => {
+
+export const Footer = () => {
+  const { pathname } = useLocation();
+
+  if (pathname === Routes.TASK) {
+    return null;
+  }
+
   const render = itemsNavBar.map((item, index) => {
     return (
       <li className="nav__item" key={index}>
@@ -28,5 +37,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

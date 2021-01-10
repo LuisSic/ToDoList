@@ -37,6 +37,7 @@
   padding: 1rem;
   transition: box-shadow 0.3s, transform 0.3s;
   &__icon {
+    transition: all 0.3s ease-out;
     width: 4rem;
     height: 4rem;
     grid-row: 1 / 2;

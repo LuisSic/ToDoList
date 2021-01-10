@@ -1,12 +1,10 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
-import Geo from '../../img/geo.jpeg';
-import Renne from '../../img/renne.jpg';
-import Luis from '../../img/luis.jpg';
-import jose from '../../img/jose.jpg';
-import Carpio from '../../img/carpio.jpg';
-import Ricardo from '../../img/ricardo.jpg';
-import Footer from '../../components/Footer/Footer';
+import Geo from '../../img/team/geo.jpeg';
+import Renne from '../../img/team/renne.jpg';
+import Luis from '../../img/team/luis.jpg';
+import jose from '../../img/team/jose.jpg';
+import Carpio from '../../img/team/carpio.jpg';
+import Ricardo from '../../img/team/ricardo.jpg';
 import CardProfile from './CardProfile';
 
 const teamMembers = [
@@ -86,9 +84,7 @@ export const Team = () => {
   });
   return (
     <>
-      <Header />
       <div className="team">{render}</div>
-      <Footer />
     </>
   );
 };

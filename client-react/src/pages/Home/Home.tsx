@@ -1,35 +1,32 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 import Feature from './Feature';
-import { ReactComponent as Add } from '../../img/add-outline.svg';
-import { ReactComponent as Alert } from '../../img/alert-circle-outline.svg';
-import { ReactComponent as Chatbox } from '../../img/chatbox-outline.svg';
-import { ReactComponent as Checkmark } from '../../img/checkmark-circle-outline.svg';
-import { ReactComponent as Flag } from '../../img/flag-outline.svg';
-import { ReactComponent as Heart } from '../../img/heart-outline.svg';
-import { ReactComponent as List } from '../../img/list-outline.svg';
-import { ReactComponent as Notifications } from '../../img/notifications-outline.svg';
-import { ReactComponent as Person } from '../../img/person-add-outline.svg';
-import { ReactComponent as Refresh } from '../../img/refresh-outline.svg';
-import { ReactComponent as Settings } from '../../img/settings-outline.svg';
-import { ReactComponent as Chart } from '../../img/stats-chart-outline.svg';
-import { ReactComponent as Photo1 } from '../../img/photo-2.svg';
-import { ReactComponent as Photo2 } from '../../img/photo-1.svg';
-import { ReactComponent as Linkedin } from '../../img/linkedin.svg';
-import { ReactComponent as Microsoft } from '../../img/microsoft.svg';
-import { ReactComponent as Tesla } from '../../img/coca-cola.svg';
-import { ReactComponent as Xbox } from '../../img/xbox-2.svg';
-import { ReactComponent as Facebook } from '../../img/facebook-1.svg';
-import { ReactComponent as Netflix } from '../../img/netflix-2015-logo.svg';
-import { ReactComponent as Youtube } from '../../img/youtube.svg';
-import { ReactComponent as Sendgrid } from '../../img/sendgrid-2.svg';
+import { ReactComponent as Add } from '../../img/features/add-outline.svg';
+import { ReactComponent as Alert } from '../../img/features/alert-circle-outline.svg';
+import { ReactComponent as Chatbox } from '../../img/features/chatbox-outline.svg';
+import { ReactComponent as Checkmark } from '../../img/features/checkmark-circle-outline.svg';
+import { ReactComponent as Flag } from '../../img/features/flag-outline.svg';
+import { ReactComponent as Heart } from '../../img/features/heart-outline.svg';
+import { ReactComponent as List } from '../../img/features/list-outline.svg';
+import { ReactComponent as Notifications } from '../../img/features/notifications-outline.svg';
+import { ReactComponent as Person } from '../../img/features/person-add-outline.svg';
+import { ReactComponent as Refresh } from '../../img/features/refresh-outline.svg';
+import { ReactComponent as Settings } from '../../img/features/settings-outline.svg';
+import { ReactComponent as Chart } from '../../img/features/stats-chart-outline.svg';
+import { ReactComponent as Photo1 } from '../../img/features/photo-2.svg';
+import { ReactComponent as Photo2 } from '../../img/features/photo-1.svg';
+import { ReactComponent as Linkedin } from '../../img/features/linkedin.svg';
+import { ReactComponent as Microsoft } from '../../img/features/microsoft.svg';
+import { ReactComponent as Tesla } from '../../img/features/coca-cola.svg';
+import { ReactComponent as Xbox } from '../../img/features/xbox-2.svg';
+import { ReactComponent as Facebook } from '../../img/features/facebook-1.svg';
+import { ReactComponent as Netflix } from '../../img/features/netflix-2015-logo.svg';
+import { ReactComponent as Youtube } from '../../img/features/youtube.svg';
+import { ReactComponent as Sendgrid } from '../../img/features/sendgrid-2.svg';
 
 export const Home = () => {
   return (
     <>
-      <Header />
       <div className="slogan">
         <Photo2 className="slogan__photo--2" />
         <div className="slogan__text">
@@ -152,8 +149,6 @@ export const Home = () => {
 
         <Sendgrid className="customers__item--8 customers__img" />
       </section>
-
-      <Footer />
     </>
   );
 };

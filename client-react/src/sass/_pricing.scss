@@ -1,9 +1,21 @@
 .pricing {
-  grid-column: center-start / center-end;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.12);
-  margin: 5rem;
+  &__head {
+    grid-column: center-start / center-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem 10rem 5rem;
+    .heading-1 {
+      color: $color-blue-primary;
+    }
+  }
+  &__body {
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.12);
+    margin: 5rem;
+  }
 }
 
 .plan {

@@ -1,30 +1,38 @@
 import React from 'react';
 import Button from '../Button/Button';
 import Logo from '../../img/Logo-9.png';
+import { useLocation } from 'react-router-dom';
 import history from '../../helper/history';
+import { Routes } from '../../Routes';
 const buttonsHeader = [
   {
     text: 'Home',
-    callback: (): void => history.push('/'),
+    callback: (): void => history.push(Routes.HOME),
   },
   {
     text: 'Premium',
-    callback: (): void => history.push('/pricing'),
+    callback: (): void => history.push(Routes.PRICING),
   },
   {
     text: 'Meet the Team',
-    callback: (): void => history.push('/team'),
+    callback: (): void => history.push(Routes.TEAM),
   },
   {
     text: 'Support',
-    callback: (): void => history.push('/support'),
+    callback: (): void => history.push(Routes.SUPPORT),
   },
   {
     text: 'Login',
-    callback: (): void => history.push('/'),
+    callback: (): void => history.push(Routes.TASK),
   },
 ];
-const Header = () => {
+export const Header = () => {
+  const { pathname } = useLocation();
+
+  if (pathname === Routes.TASK) {
+    return null;
+  }
+
   const render = buttonsHeader.map((item, index) => {
     return (
       <Button
@@ -42,5 +50,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

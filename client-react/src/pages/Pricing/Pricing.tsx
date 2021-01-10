@@ -1,17 +1,17 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 import { ReactComponent as Teams } from '../../img/pricing/undraw_miro_qvwm.svg';
-import { ReactComponent as Checkmark } from '../../img/checkmark-circle-outline.svg';
+import { ReactComponent as Checkmark } from '../../img/features/checkmark-circle-outline.svg';
 import { ReactComponent as Update } from '../../img/pricing/undraw_update_uxn2.svg';
 import { ReactComponent as Free } from '../../img/pricing/undraw_order_confirmed_aaw7.svg';
 
 export const Pricing = () => {
   return (
     <>
-      <Header />
-      <div className="pricing">
+      <div className="pricing__head">
+        <h1 className="heading-1">Find the plan that’s right for you</h1>
+      </div>
+      <div className="pricing__body">
         <div className="plan plan--1">
           <Free className="plan__svg" />
           <h3 className="heading-3">Free</h3>
@@ -120,7 +120,6 @@ export const Pricing = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
