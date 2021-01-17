@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button';
 import Logo from '../../img/Logo-9.png';
-import { useLocation } from 'react-router-dom';
 import history from '../../helper/history';
 import { Routes } from '../../Routes';
 const buttonsHeader = [
@@ -23,16 +22,10 @@ const buttonsHeader = [
   },
   {
     text: 'Login',
-    callback: (): void => history.push(Routes.TASK),
+    callback: (): void => history.push(`${Routes.TASK}/inbox`),
   },
 ];
 export const Header = () => {
-  const { pathname } = useLocation();
-
-  if (pathname === Routes.TASK) {
-    return null;
-  }
-
   const render = buttonsHeader.map((item, index) => {
     return (
       <Button

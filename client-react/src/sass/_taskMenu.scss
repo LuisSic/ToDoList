@@ -1,0 +1,143 @@
+.sidebar {
+  background: #f4f4f4;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  transition: width 180ms ease;
+  border-right: 1px solid #eaeaea;
+  overflow: hidden;
+  &__header {
+    margin: 2rem 1rem;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px;
+    width: 3rem;
+    height: 3rem;
+    transition: background-color 0.1s;
+    background: none;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    &:hover {
+      background-color: #fafafa;
+      box-shadow: 0 0 0 1px #ededed;
+    }
+
+    .hamburguerMenu {
+      width: 2.5rem;
+      color: $color-purple-primary;
+    }
+  }
+
+  &__body {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    &--scroll {
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: 78vh;
+      .navbar {
+        display: flex;
+        flex-direction: column;
+        &__item {
+          cursor: pointer;
+          display: flex;
+          padding: 1rem 1rem 1rem 1.5rem;
+          gap: 1rem;
+          align-items: center;
+          &-icon {
+            min-width: 2rem;
+            width: 2rem;
+            color: #767678;
+
+            &--4 {
+              color: rgb(7, 145, 7);
+            }
+
+            &--5 {
+              color: rgb(158, 12, 12);
+            }
+
+            &--6 {
+              color: blue;
+            }
+
+            &--morado {
+              color: $color-purple-dark;
+            }
+          }
+          &-text {
+            font-size: 1.4rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+
+          &:hover {
+            background-color: #fafafa;
+          }
+        }
+
+        &-lastStaticList {
+          margin: 9px 16px;
+          height: 1px;
+        }
+
+        .active {
+          background-color: #ededed;
+          color: $color-purple-dark;
+        }
+      }
+    }
+
+    &--addList {
+      .addTask {
+        display: flex;
+        cursor: pointer;
+        padding: 1rem 1rem 1rem 1.5rem;
+        gap: 1rem;
+        align-items: center;
+        &__icon {
+          min-width: 2rem;
+          width: 2rem;
+          color: $color-purple-dark;
+        }
+
+        &__input {
+          outline: none;
+          background-color: transparent;
+          border: 0;
+          overflow: hidden;
+          &:focus::placeholder {
+            color: gray;
+          }
+          &::placeholder {
+            color: $color-purple-dark;
+            font-size: 1.4rem;
+          }
+        }
+
+        &:hover {
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+
+  &-expand {
+    width: 30rem;
+  }
+
+  &-exited {
+    width: 5.5rem;
+  }
+
+  //height: auto;
+}

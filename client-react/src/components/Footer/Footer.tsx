@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import { Routes } from '../../Routes';
 
 const itemsNavBar = [
@@ -13,12 +12,6 @@ const itemsNavBar = [
 ];
 
 export const Footer = () => {
-  const { pathname } = useLocation();
-
-  if (pathname === Routes.TASK) {
-    return null;
-  }
-
   const render = itemsNavBar.map((item, index) => {
     return (
       <li className="nav__item" key={index}>
