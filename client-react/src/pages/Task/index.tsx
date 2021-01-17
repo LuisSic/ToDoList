@@ -1,13 +1,15 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import { TaskHeader } from './Header';
 import { Menu } from './Menu';
 import { TaskList } from '../../components/TaskList';
+/*
 interface UseParam {
   id?: string;
 }
+*/
 export const Task = () => {
-  const { id } = useParams<UseParam>();
+  //const { id } = useParams<UseParam>();
   return (
     <>
       <div className="task">
