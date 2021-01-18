@@ -28,7 +28,6 @@ export const Home = () => {
   return (
     <>
       <div className="slogan">
-        <Photo2 className="slogan__photo--2" />
         <div className="slogan__text">
           <h1 className="heading-1">
             <span className="heading-1--main">Organize it all with To Do</span>
@@ -40,13 +39,14 @@ export const Home = () => {
             callback={() => console.log('click')}
           />
         </div>
+        <Photo2 className="slogan__photo--2" />
       </div>
       <section className="features">
         <div className="features__header">
+          <Photo1 className="features__header--img" />
           <h1 className="heading-1 features__header--center">
             Features that people love
           </h1>
-          <Photo1 className="features__header--img" />
         </div>
         <div className="feature__header">
           <h3 className="heading-3">

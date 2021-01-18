@@ -4,7 +4,6 @@
   justify-content: space-around;
   grid-column: full-start / full-end;
   background: $color-blue-primary;
-  //height: 8rem;
 
   &__nav {
     display: flex;
@@ -25,12 +24,7 @@
   }
 
   @media only screen and (max-width: $bp-medium) {
-    &-logo {
-    }
     &__hamburguerMenu {
-      //top: 0;
-      //right: 0;
-      //position: absolute;
       display: block;
       cursor: pointer;
       width: 5rem;
@@ -47,6 +41,9 @@
       transition: all 0.5s ease;
       top: 7.4rem;
       left: -100%;
+      @media only screen and (max-width: $bp-small) {
+        top: 4.5rem;
+      }
       &--active {
         background: $color-blue-primary;
         left: 0;
@@ -55,6 +52,11 @@
 
       &--exited {
       }
+    }
+  }
+  @media only screen and (max-width: $bp-small) {
+    &-logo {
+      width: 12rem;
     }
   }
 }

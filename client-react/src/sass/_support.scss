@@ -6,9 +6,12 @@
   &__main {
     display: flex;
     justify-content: center;
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+    }
     &--img {
       height: 40rem;
-      width: 80rem;
+      max-width: 100%;
     }
 
     &--text {

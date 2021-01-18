@@ -3,12 +3,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0;
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+  padding: 0 5rem;
+  margin: 5rem 0 0;
   &__text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 75rem;
+    width: 100%;
   }
 
   &-btn {
@@ -23,7 +27,7 @@
   &__photo {
     &--2 {
       height: 45rem;
-      width: 60rem;
+      max-width: 100%;
     }
   }
   .heading-2 {
@@ -32,6 +36,10 @@
 
   .heading-1 {
     color: $color-blue-primary;
+  }
+
+  .heading-1,
+  .heading-2 {
     text-align: center;
   }
 }
