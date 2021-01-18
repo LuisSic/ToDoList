@@ -14,6 +14,9 @@
   display: flex;
   gap: 3rem;
   list-style: none;
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
 
   &__link:link,
   &__link:visited {

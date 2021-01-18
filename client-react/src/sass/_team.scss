@@ -1,7 +1,11 @@
 .team {
   grid-column: full-start / full-end;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); //repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(55rem, 1fr));
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  }
 
   &__group {
     display: flex;
@@ -43,6 +47,7 @@
   }
 
   .heading-2 {
+    text-align: center;
     color: $color-blue-primary;
   }
   .heading-4 {

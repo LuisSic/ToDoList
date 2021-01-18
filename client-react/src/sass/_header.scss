@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: space-around;
   grid-column: full-start / full-end;
-  background-color: $color-blue-primary;
+  background: $color-blue-primary;
+  //height: 8rem;
 
-  &__page-options {
+  &__nav {
     display: flex;
     align-items: center;
     align-self: stretch;
@@ -15,6 +16,44 @@
       background-color: transparent;
       &:hover {
         background-color: #51618b;
+      }
+    }
+  }
+
+  &__hamburguerMenu {
+    display: none;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    &-logo {
+    }
+    &__hamburguerMenu {
+      //top: 0;
+      //right: 0;
+      //position: absolute;
+      display: block;
+      cursor: pointer;
+      width: 5rem;
+      color: $color-purple-primary;
+    }
+
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 50vh;
+      position: absolute;
+      opacity: 1;
+      transition: all 0.5s ease;
+      top: 7.4rem;
+      left: -100%;
+      &--active {
+        background: $color-blue-primary;
+        left: 0;
+        z-index: 1;
+      }
+
+      &--exited {
       }
     }
   }

@@ -16,6 +16,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
     }
   }
 
@@ -40,12 +41,21 @@
   .heading-4 {
     color: $color-blue-primary;
   }
+
+  .heading-1 {
+    &-sub {
+      margin-bottom: 2rem;
+    }
+  }
 }
 .topics {
   grid-column: center-start / center-end;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   margin: 10rem;
+  @media only screen and (max-width: $bp-small) {
+    margin: 5rem 0;
+  }
   gap: 2.5rem;
 }
 .topic {

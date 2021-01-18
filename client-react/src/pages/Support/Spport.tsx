@@ -52,7 +52,7 @@ export const Support = () => {
         <div className="support__main">
           <div className="support__main--text">
             <h1 className="heading-1">Still Lost?</h1>
-            <h1 className="heading-1">We're here for you</h1>
+            <h1 className="heading-1 heading-1-sub">We're here for you</h1>
             <Button
               className="btn primary--btn"
               text="Contact Us"

@@ -3,6 +3,11 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(15rem, 1fr));
   grid-template-rows: 1fr auto;
+  justify-items: center;
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 1fr;
+  }
+
   gap: 2rem;
   align-items: start;
   color: $color-blue-primary;
@@ -57,5 +62,11 @@
     }
 
     box-shadow: 0 0 35px -2px rgba(0, 0, 0, 0.2);
+  }
+
+  &__header {
+    @media only screen and (max-width: $bp-medium) {
+      border-bottom: 2.5px solid $color-button-secondary-dark;
+    }
   }
 }

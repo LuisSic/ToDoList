@@ -1,37 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../Button/Button';
 import Logo from '../../img/Logo-9.png';
 import history from '../../helper/history';
+import { ReactComponent as MenuSvg } from '../../img/task/menu-outline.svg';
 import { Routes } from '../../Routes';
 const buttonsHeader = [
   {
     text: 'Home',
-    callback: (): void => history.push(Routes.HOME),
+    ruta: Routes.HOME,
   },
   {
     text: 'Premium',
-    callback: (): void => history.push(Routes.PRICING),
+    ruta: Routes.PRICING,
   },
   {
     text: 'Meet the Team',
-    callback: (): void => history.push(Routes.TEAM),
+    ruta: Routes.TEAM,
   },
   {
     text: 'Support',
-    callback: (): void => history.push(Routes.SUPPORT),
+    ruta: Routes.SUPPORT,
   },
   {
     text: 'Login',
-    callback: (): void => history.push(`${Routes.TASK}/inbox`),
+    ruta: `${Routes.TASK}/inbox`,
   },
 ];
 export const Header = () => {
+  const [click, setClick] = useState(false);
+  const callback = (ruta: string) => {
+    history.push(ruta);
+    setClick(!click);
+  };
   const render = buttonsHeader.map((item, index) => {
     return (
       <Button
         className="btn btn__header"
         text={item.text}
-        callback={item.callback}
+        callback={() => callback(item.ruta)}
         key={index}
       />
     );
@@ -39,7 +45,15 @@ export const Header = () => {
   return (
     <header className="header">
       <img src={Logo} alt="ToDo logo" className="header-logo"></img>
-      <div className="header__page-options">{render}</div>
+      <MenuSvg
+        className="header__hamburguerMenu"
+        onClick={() => setClick(!click)}
+      />
+      <div
+        className={`header__nav header__nav${click ? '--active' : '--exited'}`}
+      >
+        {render}
+      </div>
     </header>
   );
 };

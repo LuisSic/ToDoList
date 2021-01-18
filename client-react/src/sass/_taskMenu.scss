@@ -6,6 +6,11 @@
   transition: width 180ms ease;
   border-right: 1px solid #eaeaea;
   overflow: hidden;
+  @media only screen and (max-width: $bp-small) {
+    position: absolute;
+    z-index: 1;
+  }
+
   &__header {
     margin: 2rem 1rem;
   }

@@ -1,20 +1,30 @@
 .pricing {
+  grid-column: full-start / full-end;
   &__head {
-    grid-column: center-start / center-end;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10rem 10rem 5rem;
+    text-align: center;
+
     .heading-1 {
       color: $color-blue-primary;
     }
+    @media only screen and (max-width: $bp-small) {
+      padding: 1.5rem;
+    }
   }
   &__body {
-    grid-column: center-start / center-end;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.12);
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     margin: 5rem;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.12);
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      box-shadow: none;
+      margin: 5rem 0;
+    }
   }
 }
 
@@ -23,6 +33,12 @@
   flex-direction: column;
   align-items: center;
   padding: 5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    place-self: center;
+    min-width: 40rem;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.12);
+  }
 
   &--btn {
     background-color: $color-button-secondary;
@@ -52,6 +68,7 @@
   }
   &__svg {
     height: 18rem;
+    width: 18rem;
     padding-bottom: 2rem;
   }
 
