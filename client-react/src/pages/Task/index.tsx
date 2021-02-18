@@ -10,7 +10,7 @@ interface UseParam {
 }
 */
 export const Task = () => {
-  const { isLoading, isAuthenticated } = useAuth0();
+  const { isLoading } = useAuth0();
 
   if (isLoading) {
     return <div>Loading...</div>;

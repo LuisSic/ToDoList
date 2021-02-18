@@ -2,7 +2,6 @@ import { useAuth0 } from '@auth0/auth0-react';
 export const TaskHeader = () => {
   const { isAuthenticated, user, logout } = useAuth0();
 
-  console.log('user', user);
   return (
     <header className="task__header">
       <span className="task__header-title">To Do</span>
