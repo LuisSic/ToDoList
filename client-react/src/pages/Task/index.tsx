@@ -3,13 +3,19 @@ import React from 'react';
 import { TaskHeader } from './Header';
 import { Menu } from './Menu';
 import { TaskList } from '../../components/TaskList';
+import { useAuth0 } from '@auth0/auth0-react';
 /*
 interface UseParam {
   id?: string;
 }
 */
 export const Task = () => {
-  //const { id } = useParams<UseParam>();
+  const { isLoading, isAuthenticated } = useAuth0();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <div className="task">

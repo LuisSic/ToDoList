@@ -16,6 +16,13 @@
       &:hover {
         background-color: #51618b;
       }
+      @media only screen and (max-width: $bp-medium) {
+        width: 100%;
+      }
+    }
+
+    .activate {
+      background-color: #51618b;
     }
   }
 
@@ -48,9 +55,6 @@
         background: $color-blue-primary;
         left: 0;
         z-index: 1;
-      }
-
-      &--exited {
       }
     }
   }

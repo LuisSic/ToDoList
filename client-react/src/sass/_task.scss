@@ -18,7 +18,7 @@
 
     .user-nav {
       padding: 0 1rem;
-      cursor: pointer;
+      //cursor: pointer;
       height: 100%;
       display: flex;
       align-items: center;
@@ -35,7 +35,7 @@
       }
 
       &:hover {
-        background-color: $color-blue-secondary;
+        //background-color: $color-blue-secondary;
       }
     }
   }

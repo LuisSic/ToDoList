@@ -5,3 +5,12 @@ export enum Routes {
   SUPPORT = '/support',
   TASK = '/task',
 }
+
+export enum TaskHeaderId {
+  MY_DAY = 'myday',
+  IMPORTANT = 'important',
+  PLANNED = 'planned',
+  ASIGNED_TO_ME = 'assigned_to_me',
+  FLAGGED_EMAIL = 'flagged_email',
+  INBOX = 'inbox',
+}
