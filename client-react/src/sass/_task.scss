@@ -34,6 +34,9 @@
         font-size: 2rem;
         color: $color-white;
         margin-right: 1rem;
+        @media only screen and (max-width: $bp-small) {
+          display: none;
+        }
       }
       &__btn-header {
         height: 100%;
