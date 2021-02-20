@@ -12,8 +12,11 @@ export const TaskHeader = () => {
       <nav className="user-nav">
         <img src={user.picture} alt="User" className="user-nav__user-photo" />
         <span className="user-nav__user-name">{user.name}</span>
-        <button className="user_nav" onClick={() => logout(logoutOptions)}>
-          {isAuthenticated ? <span>Log Out</span> : ''}
+        <button
+          className="btn user-nav__btn-header"
+          onClick={() => logout(logoutOptions)}
+        >
+          {isAuthenticated ? <span>Sign Out</span> : ''}
         </button>
       </nav>
     </header>

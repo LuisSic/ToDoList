@@ -55,13 +55,13 @@
           cursor: pointer;
           display: flex;
           padding: 1rem 1rem 1rem 1.5rem;
-          gap: 1rem;
+
           align-items: center;
           &-icon {
             min-width: 2rem;
             width: 2rem;
             color: #767678;
-
+            margin-right: 1rem;
             &--4 {
               color: rgb(7, 145, 7);
             }
