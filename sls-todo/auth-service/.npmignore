@@ -1,0 +1,9 @@
+# package directories
+node_modules
+jspm_packages
+secret.pem
+# Serverless directories
+.serverless
+
+# Webpack directories
+.webpack
