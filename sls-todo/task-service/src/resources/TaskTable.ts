@@ -1,6 +1,4 @@
-import { CloudFormationResource } from 'serverless/aws';
-
-export const TaskTable: CloudFormationResource = {
+export const TaskTable = {
   Type: 'AWS::DynamoDB::Table',
   Properties: {
     TableName: 'TaskTable-${self:provider.stage}',
