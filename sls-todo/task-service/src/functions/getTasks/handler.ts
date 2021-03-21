@@ -2,16 +2,26 @@ import type { APIGatewayProxyHandler } from 'aws-lambda';
 import { DynamoDB } from 'aws-sdk';
 import * as createError from 'http-errors';
 import { commonMiddleware } from '../../libs';
+import { StatusTask } from '../../interfaces';
 
 const dynamodb = new DynamoDB.DocumentClient();
 
 const getTasks: APIGatewayProxyHandler = async (event, _context) => {
   let task: DynamoDB.ItemList = [];
-
+  const { email } = event.requestContext.authorizer;
   try {
     const result = await dynamodb
-      .scan({
+      .query({
         TableName: process.env.TASK_TABLE_NAME,
+        KeyConditionExpression: '#user = :user',
+        FilterExpression: 'statusTask <> :status',
+        ExpressionAttributeValues: {
+          ':user': email,
+          ':status': StatusTask.DELETED,
+        },
+        ExpressionAttributeNames: {
+          '#user': 'user',
+        },
       })
       .promise();
 

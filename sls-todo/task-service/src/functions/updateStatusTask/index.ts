@@ -7,8 +7,8 @@ export default {
   events: [
     {
       http: {
-        method: 'PATCH',
-        path: '/task/{id}/status',
+        method: 'PUT',
+        path: '/task/{id}',
         request: {
           schema: {
             'application/json': schema,

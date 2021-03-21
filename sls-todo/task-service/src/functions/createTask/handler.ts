@@ -14,6 +14,8 @@ const createTask: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   event
 ) => {
   const { title, isImportant, isMyDay } = event.body;
+  const { email } = event.requestContext.authorizer;
+
   const taskItem: Task = {
     id: uuid(),
     title,
@@ -21,6 +23,7 @@ const createTask: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     isMyDay,
     statusTask: StatusTask.NOT_FINISH,
     createdAt: new Date().toISOString(),
+    user: email,
   };
 
   try {

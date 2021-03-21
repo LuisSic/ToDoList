@@ -8,11 +8,19 @@ export const TaskTable = {
         AttributeName: 'id',
         AttributeType: 'S',
       },
+      {
+        AttributeName: 'user',
+        AttributeType: 'S',
+      },
     ],
     KeySchema: [
       {
-        AttributeName: 'id',
+        AttributeName: 'user',
         KeyType: 'HASH',
+      },
+      {
+        AttributeName: 'id',
+        KeyType: 'RANGE',
       },
     ],
   },

@@ -15,9 +15,13 @@ const updateStatusTask: ValidatedEventAPIGatewayProxyEvent<
   typeof schema
 > = async (event, _context) => {
   const { id } = event.pathParameters;
-  const { status } = event.body;
-
+  const { status, isImportant, isMyDay } = event.body;
+  const { email } = event.requestContext.authorizer;
   const task = await getTaskById(id);
+
+  if (task.user !== email) {
+    throw new createError.Unauthorized(`You cannot modify this task!`);
+  }
 
   if (task.statusTask === StatusTask.DELETED) {
     throw new createError.Forbidden(`You cannot edit a deteled task`);
@@ -26,9 +30,12 @@ const updateStatusTask: ValidatedEventAPIGatewayProxyEvent<
   const params: DynamoDB.DocumentClient.UpdateItemInput = {
     TableName: process.env.TASK_TABLE_NAME,
     Key: { id },
-    UpdateExpression: 'set statusTask = :newStatus',
+    UpdateExpression:
+      'set statusTask = :newStatus, set isImportant = :newIsImportant, set isMyDay = :newIsMyDay',
     ExpressionAttributeValues: {
       ':newStatus': status,
+      ':newIsImportant': isImportant,
+      ':newIsMyDay': isMyDay,
     },
     ReturnValues: 'ALL_NEW',
   };

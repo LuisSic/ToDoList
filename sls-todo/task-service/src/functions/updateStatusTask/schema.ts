@@ -6,6 +6,12 @@ export default {
       type: 'string',
       enum: [StatusTask.COMPLETED, StatusTask.DELETED, StatusTask.NOT_FINISH],
     },
+    isImportant: {
+      type: 'boolean',
+    },
+    isMyDay: {
+      type: 'boolean',
+    },
   },
-  required: ['status'],
+  required: ['status', 'isImportant', 'isMyDay'],
 } as const;

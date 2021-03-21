@@ -6,4 +6,5 @@ export interface Task {
   title: string;
   isImportant: boolean;
   isMyDay: boolean;
+  user: string;
 }
