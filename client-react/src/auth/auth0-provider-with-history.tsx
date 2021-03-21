@@ -21,6 +21,7 @@ export const Auth0ProviderWithHistory = ({ children }: Auth0ProviderProps) => {
       clientId={clientId!}
       redirectUri={`${window.location.origin}/task/inbox`}
       onRedirectCallback={onRedirectCallback}
+      useRefreshTokens={true}
     >
       {children}
     </Auth0Provider>
