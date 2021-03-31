@@ -7,11 +7,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Spinner } from '../../components/Loader/Loader';
 import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import { fetchTodos } from '../../store/actions/todos/thunk';
-/*
-interface UseParam {
-  id?: string;
-}
-*/
+
 export const Task = () => {
   const { isLoading, getIdTokenClaims } = useAuth0();
   const status = useAppSelector((state) => state.todos.status);

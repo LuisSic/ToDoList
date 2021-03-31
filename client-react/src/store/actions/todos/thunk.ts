@@ -6,7 +6,7 @@ import { Todo } from './types';
 import { setTodo, setTodos, setLoading, editTodo } from './creators';
 import { addTodosToList, addTodoToList } from '../listTodos/creators';
 type AppThunk<ReturnType = void> = ThunkAction<
-  void,
+  ReturnType,
   RootState,
   unknown,
   Action<string>
