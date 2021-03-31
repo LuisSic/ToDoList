@@ -55,7 +55,11 @@ export const TodoItem = ({ id }: TodoItemProps) => {
             <CheckFill className="icon icon--circleCompleted" />
           )}
         </div>
-        <button className="tasks__item-btn">{todo.title}</button>
+        <button className="tasks__item-btn">
+          <span className={todo.statusTask === 'COMPLETED' ? 'completed' : ''}>
+            {todo.title}
+          </span>
+        </button>
         <Star className="tasks__item-importanceButton" />
       </div>
     </>
