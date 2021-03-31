@@ -8,6 +8,7 @@ export default {
       http: {
         method: 'get',
         path: '/task/{id}',
+        cors: true,
         authorizer: '${self:custom.authorizer}',
       },
     },

@@ -81,6 +81,14 @@
             overflow: hidden;
           }
 
+          &-cant {
+            font-size: 1.4rem;
+            margin-left: auto;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+
           &:hover {
             background-color: #fafafa;
           }

@@ -67,6 +67,7 @@
         margin-right: 1rem;
         .icon {
           color: #3459c1;
+          fill: #3459c1;
           cursor: pointer;
           &--circleCheck {
             position: absolute;
@@ -81,7 +82,8 @@
             }
           }
 
-          &--cirleOutline {
+          &--cirleOutline,
+          &--circleCompleted {
             min-width: 2.4rem;
             width: 2.4rem;
           }

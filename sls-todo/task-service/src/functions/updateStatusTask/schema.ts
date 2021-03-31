@@ -2,7 +2,7 @@ import { StatusTask } from '../../interfaces';
 export default {
   type: 'object',
   properties: {
-    status: {
+    statusTask: {
       type: 'string',
       enum: [StatusTask.COMPLETED, StatusTask.DELETED, StatusTask.NOT_FINISH],
     },
@@ -13,5 +13,5 @@ export default {
       type: 'boolean',
     },
   },
-  required: ['status', 'isImportant', 'isMyDay'],
+  required: ['statusTask', 'isImportant', 'isMyDay'],
 } as const;

@@ -8,6 +8,7 @@ import { ScrollToTopControlller } from '../components/Scroll/ScrollTop';
 import { ScrollArrow } from '../components/Scroll/ScrollArrow';
 import { Main } from './Main';
 import { ProtectedRoute } from '../helper/privateRoute';
+
 const App = () => {
   return (
     <>

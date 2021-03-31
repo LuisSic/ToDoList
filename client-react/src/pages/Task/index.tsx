@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 //import { useParams } from 'react-router-dom';
 import { TaskHeader } from './Header';
 import { Menu } from './Menu';
-import { TaskList } from '../../components/TaskList';
+import { Tasks } from '../../components/TaskList';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Spinner } from '../../components/Loader/Loader';
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
+import { fetchTodos } from '../../store/actions/todos/thunk';
 /*
 interface UseParam {
   id?: string;
 }
 */
 export const Task = () => {
-  const { isLoading } = useAuth0();
+  const { isLoading, getIdTokenClaims } = useAuth0();
+  const status = useAppSelector((state) => state.todos.status);
+  const dispatch = useAppDispatch();
 
-  if (isLoading) {
+  useEffect(() => {
+    const getTodos = async () => {
+      const token = await getIdTokenClaims();
+      dispatch(fetchTodos(token.__raw));
+    };
+    getTodos();
+  }, [dispatch, getIdTokenClaims]);
+
+  if (isLoading || status === 'loading') {
     return <Spinner />;
   }
 
@@ -23,7 +35,7 @@ export const Task = () => {
         <TaskHeader />
         <div className="task__main">
           <Menu />
-          <TaskList />
+          <Tasks />
         </div>
       </div>
     </>

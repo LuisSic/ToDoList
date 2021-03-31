@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
-
+import { useParams } from 'react-router-dom';
 import { ReactComponent as MenuSvg } from '../../../img/task/menu-outline.svg';
 import { ReactComponent as List } from '../../../img/features/list-outline.svg';
 import { ReactComponent as Add } from '../../../img/features/add-outline.svg';
@@ -11,6 +10,7 @@ import { ReactComponent as Sunny } from '../../../img/task/sunny-outline.svg';
 import { ReactComponent as Flag } from '../../../img/features/flag-outline.svg';
 import { ReactComponent as Person } from '../../../img/task/person-outline.svg';
 import { TaskHeaderId } from '../../../Routes';
+import { MenuItem } from './menuItem';
 interface UseParams {
   id?: string;
 }
@@ -48,7 +48,6 @@ const svgList = [
   },
 ];
 export const Menu = () => {
-  const history = useHistory();
   const { id } = useParams<UseParams>();
   const [sideNavExpanded, setSideNavExpanded] = useState<boolean>(true);
   const [newList, setNewList] = useState<string[]>([]);
@@ -81,12 +80,10 @@ export const Menu = () => {
     );
   });
 
-  const setTabAndHistory = (path: string) => {
-    history.push(path);
-  };
   const renderOptions = svgList.map((svgItem, index) => {
-    console.log('index', index);
     return (
+      <MenuItem key={index} item={svgItem} index={index} tabSelected={tabId} />
+      /*
       <li
         className={`navbar__item ${tabId === svgItem.tabId ? 'active' : ''}`}
         onClick={() => setTabAndHistory(`/task/${svgItem.tabId}`)}
@@ -97,8 +94,10 @@ export const Menu = () => {
         />
         <span className="navbar__item-text">{svgItem.text}</span>
       </li>
+      */
     );
   });
+
   return (
     <div className={`sidebar sidebar-${sideNavExpanded ? 'expand' : 'exited'}`}>
       <div className="sidebar__header">

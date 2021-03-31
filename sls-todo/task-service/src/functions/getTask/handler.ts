@@ -8,13 +8,13 @@ import { Task } from '../../interfaces';
 import schema from './schema';
 const dynamodb = new DynamoDB.DocumentClient();
 
-export const getTaskById = async (id: string): Promise<Task> => {
+export const getTaskById = async (id: string, user: string): Promise<Task> => {
   let task: Task;
   try {
     const result = await dynamodb
       .get({
         TableName: process.env.TASK_TABLE_NAME,
-        Key: { id },
+        Key: { id, user },
       })
       .promise();
 
@@ -33,7 +33,8 @@ export const getTaskById = async (id: string): Promise<Task> => {
 
 const getTask: APIGatewayProxyHandler = async (event) => {
   const { id } = event.pathParameters;
-  let task = await getTaskById(id);
+  const { email } = event.requestContext.authorizer;
+  let task = await getTaskById(id, email);
 
   return {
     statusCode: 201,

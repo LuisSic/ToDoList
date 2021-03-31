@@ -7,13 +7,14 @@ export default {
   events: [
     {
       http: {
-        method: 'PUT',
+        method: 'put',
         path: '/task/{id}',
         request: {
           schema: {
             'application/json': schema,
           },
         },
+        cors: true,
         authorizer: '${self:custom.authorizer}',
       },
     },

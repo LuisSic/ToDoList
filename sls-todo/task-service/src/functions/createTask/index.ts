@@ -15,6 +15,7 @@ export default {
             'application/json': schema,
           },
         },
+        cors: true,
         authorizer: '${self:custom.authorizer}',
       },
     },
