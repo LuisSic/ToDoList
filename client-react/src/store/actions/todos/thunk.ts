@@ -4,7 +4,12 @@ import { RootState } from '../..';
 import { todoApi } from '../../../apis/todo';
 import { Todo } from './types';
 import { setTodo, setTodos, setLoading, editTodo } from './creators';
-import { addTodosToList, addTodoToList } from '../listTodos/creators';
+import {
+  addTodosToList,
+  addTodoToList,
+  updateImportantList,
+  updateMyDayList,
+} from '../listTodos/creators';
 type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,
@@ -30,6 +35,8 @@ interface EditTodo {
   };
   token: string;
 }
+
+type typeUpdate = 'isImportant' | 'isMyDay' | 'N/A';
 
 export const createTodo = (data: PostTodo): AppThunk => async (dispatch) => {
   try {
@@ -68,7 +75,10 @@ export const fetchTodos = (token: string): AppThunk => async (
   }
 };
 
-export const updateTodo = (data: EditTodo): AppThunk => async (dispatch) => {
+export const updateTodo = (
+  data: EditTodo,
+  typeUpdate: typeUpdate
+): AppThunk => async (dispatch) => {
   try {
     const response = await todoApi.put<Todo>(
       `/task/${data.todo.id}`,
@@ -79,8 +89,13 @@ export const updateTodo = (data: EditTodo): AppThunk => async (dispatch) => {
         },
       }
     );
-
     dispatch(editTodo(response.data));
+    if (typeUpdate === 'isImportant') {
+      dispatch(updateImportantList(response.data));
+    }
+    if (typeUpdate === 'isMyDay') {
+      dispatch(updateMyDayList(response.data));
+    }
   } catch (err) {
     console.log(err);
   }

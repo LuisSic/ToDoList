@@ -21,3 +21,17 @@ export const removeTodoToList = (newTodo: Todo): ListActionsTypes => {
     payload: newTodo,
   };
 };
+
+export const updateImportantList = (updatedTodo: Todo): ListActionsTypes => {
+  return {
+    type: ListTodoTypes.UPDATE_TODOS_LIST_IMPORTANT,
+    payload: updatedTodo,
+  };
+};
+
+export const updateMyDayList = (updatedTodo: Todo): ListActionsTypes => {
+  return {
+    type: ListTodoTypes.UPDATE_TODOS_LIST_MYDAY,
+    payload: updatedTodo,
+  };
+};

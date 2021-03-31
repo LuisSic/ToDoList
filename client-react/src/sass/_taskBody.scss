@@ -99,6 +99,14 @@
           color: #000;
         }
       }
+
+      &-importanceCompleted {
+        min-width: 2rem;
+        width: 2.4rem;
+        cursor: pointer;
+        fill: #3459c1;
+      }
+
       &-btn {
         padding: 1.5rem 0;
         border: 0;

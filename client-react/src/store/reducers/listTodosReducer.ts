@@ -63,6 +63,30 @@ export const todoListReducer = (
         all,
         myDay,
       };
+    case ListTodoTypes.UPDATE_TODOS_LIST_IMPORTANT:
+      if (action.payload.isImportant) {
+        return {
+          ...state,
+          important: [...state.important, action.payload.id],
+        };
+      }
+      return {
+        ...state,
+        important: state.important.filter(
+          (idTodo) => idTodo !== action.payload.id
+        ),
+      };
+    case ListTodoTypes.UPDATE_TODOS_LIST_MYDAY:
+      if (action.payload.isMyDay) {
+        return {
+          ...state,
+          myDay: [...state.myDay, action.payload.id],
+        };
+      }
+      return {
+        ...state,
+        myDay: state.myDay.filter((idTodo) => idTodo !== action.payload.id),
+      };
     case ListTodoTypes.REMOVE_ID_LIST:
       return {
         ...state,
