@@ -23,12 +23,7 @@ const buttonsHeader = [
     ruta: Routes.SUPPORT,
   },
 ];
-/*
-  {
-    text: 'Login',
-    ruta: `${Routes.TASK}/inbox`,
-  },
-*/
+
 export const Header = () => {
   const { loginWithRedirect } = useAuth0();
   const [click, setClick] = useState(false);

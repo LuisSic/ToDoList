@@ -8,7 +8,7 @@ const itemsNavBar = [
   { to: Routes.HOME, text: 'Reviews' },
   { to: Routes.HOME, text: 'Blog' },
   { to: Routes.HOME, text: 'Legal Stuff' },
-  { to: Routes.HOME, text: 'Private Policy' },
+  { to: Routes.POLICY, text: 'Private Policy' },
 ];
 
 export const Footer = () => {

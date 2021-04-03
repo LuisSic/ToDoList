@@ -40,8 +40,9 @@ body {
 }
 
 .container {
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  grid-template-rows: repeat(5, min-content);
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start] repeat(
       8,

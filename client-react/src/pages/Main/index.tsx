@@ -8,6 +8,7 @@ import { Pricing } from '../Pricing/Pricing';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { Routes } from '../../Routes';
+import { Policy } from '../Policy';
 export const Main = () => {
   return (
     <div className="container">
@@ -17,6 +18,7 @@ export const Main = () => {
         <Route exact path={Routes.TEAM} component={Team} />
         <Route exact path={Routes.SUPPORT} component={Support} />
         <Route exact path={Routes.TASK} component={Task} />
+        <Route exact path={Routes.POLICY} component={Policy} />
         <Route path={Routes.HOME} component={Home} />
       </Switch>
       <Footer />

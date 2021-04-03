@@ -15,7 +15,7 @@ const App = () => {
       <ScrollToTopControlller />
       <Switch>
         <ProtectedRoute exact path={`${Routes.TASK}/:id?`} component={Task} />
-        <Route path={Routes.HOME} component={Main} />
+        <Route path={Routes.HOME} render={Main} />
       </Switch>
       <ScrollArrow />
     </>

@@ -4,6 +4,7 @@ export enum Routes {
   TEAM = '/team',
   SUPPORT = '/support',
   TASK = '/task',
+  POLICY = '/policy',
 }
 
 export enum TaskHeaderId {

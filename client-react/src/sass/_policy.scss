@@ -1,0 +1,20 @@
+.policy {
+  grid-column: full-start / full-end;
+  padding: 5rem;
+  color: $color-blue-primary;
+  p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  &-body {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  .heading-3,
+  .heading-4 {
+    margin: 2rem 0 2rem;
+  }
+}
