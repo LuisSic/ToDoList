@@ -27,7 +27,6 @@ export const TodoItem = ({ id }: TodoItemProps) => {
       const token = await getIdTokenClaims();
       setToken(token.__raw);
     };
-    console.log('se ejecuto obtener token');
     getToken();
   }, [getIdTokenClaims]);
 
