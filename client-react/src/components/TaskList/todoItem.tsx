@@ -1,23 +1,35 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
+import { updateTodo, deleteTodo } from '../../store/actions/todos/thunk';
 import { ReactComponent as Cirle } from '../../img/task/ellipse-outline.svg';
 import { ReactComponent as Check } from '../../img/task/checkmark-outline.svg';
 import { ReactComponent as Star } from '../../img/task/star-outline.svg';
 import { ReactComponent as CheckFill } from '../../img/task/checkmark-circle-fill.svg';
 import { ReactComponent as StarFilled } from '../../img/task/star-fillled.svg';
-import { useAppSelector, useAppDispatch } from '../../store/hooks';
-import { updateTodo } from '../../store/actions/todos/thunk';
+import { PopUpMenu } from '../PopUpMenu/PopUpMenu';
 
 interface TodoItemProps {
   id: string;
 }
 
 const audio = new Audio('/completed.mp3');
+
 export const TodoItem = ({ id }: TodoItemProps) => {
   const { getIdTokenClaims } = useAuth0();
-
+  const [token, setToken] = useState('');
   const todo = useAppSelector((state) => state.todos.todos[id]);
+
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const getToken = async () => {
+      const token = await getIdTokenClaims();
+      setToken(token.__raw);
+    };
+    console.log('se ejecuto obtener token');
+    getToken();
+  }, [getIdTokenClaims]);
 
   const handleClick = async () => {
     let status = '';
@@ -32,7 +44,6 @@ export const TodoItem = ({ id }: TodoItemProps) => {
       status = 'NOT_FINISH';
     }
 
-    const token = await getIdTokenClaims();
     dispatch(
       updateTodo(
         {
@@ -42,7 +53,7 @@ export const TodoItem = ({ id }: TodoItemProps) => {
             isImportant: todo.isImportant,
             id: todo.id,
           },
-          token: token.__raw,
+          token,
         },
         'N/A'
       )
@@ -50,7 +61,6 @@ export const TodoItem = ({ id }: TodoItemProps) => {
   };
 
   const handleClickStar = async () => {
-    const token = await getIdTokenClaims();
     dispatch(
       updateTodo(
         {
@@ -60,12 +70,37 @@ export const TodoItem = ({ id }: TodoItemProps) => {
             isImportant: !todo.isImportant,
             id: todo.id,
           },
-          token: token.__raw,
+          token: token,
         },
         'isImportant'
       )
     );
   };
+
+  const handleClickMyDay = async () => {
+    dispatch(
+      updateTodo(
+        {
+          todo: {
+            statusTask: todo.statusTask,
+            isMyDay: !todo.isMyDay,
+            isImportant: todo.isImportant,
+            id: todo.id,
+          },
+          token,
+        },
+        'isMyDay'
+      )
+    );
+  };
+
+  const handleDeleteTask = async () => {
+    dispatch(deleteTodo(todo.id, token));
+  };
+
+  if (!todo) {
+    return null;
+  }
 
   return (
     <>
@@ -73,11 +108,11 @@ export const TodoItem = ({ id }: TodoItemProps) => {
         <div className="tasks__item-icons" onClick={handleClick}>
           {todo.statusTask === 'NOT_FINISH' ? (
             <>
-              <Cirle className="icon icon--cirleOutline" />
+              <Cirle className="icon-small icon icon--cirleOutline" />
               <Check className="icon icon--circleCheck" />
             </>
           ) : (
-            <CheckFill className="icon icon--circleCompleted" />
+            <CheckFill className="icon-small icon icon--circleCompleted" />
           )}
         </div>
         <button className="tasks__item-btn">
@@ -87,15 +122,22 @@ export const TodoItem = ({ id }: TodoItemProps) => {
         </button>
         {todo.isImportant ? (
           <StarFilled
-            className="tasks__item-importanceCompleted"
+            className="icon-small tasks__item-importanceCompleted"
             onClick={handleClickStar}
           />
         ) : (
           <Star
-            className="tasks__item-importanceButton"
+            className="icon-small tasks__item-importanceButton"
             onClick={handleClickStar}
           />
         )}
+        <PopUpMenu
+          todo={todo}
+          callbackCompleted={handleClick}
+          callbackImportant={handleClickStar}
+          callbackMyDay={handleClickMyDay}
+          callbackDelete={handleDeleteTask}
+        />
       </div>
     </>
   );

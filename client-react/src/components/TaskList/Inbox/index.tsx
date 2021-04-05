@@ -1,11 +1,11 @@
-import React from 'react';
-
 import { TaskList } from './todolist';
-import { InputTaskAdd } from './inputTaskAdd';
+import { InputTaskAdd } from '../inputTaskAdd';
 export const Tasks = () => {
   return (
     <div className="taskList">
-      <h2 className="heading-4">Tasks</h2>
+      <div className="taskList-header">
+        <h2 className="heading-4">Tasks</h2>
+      </div>
       <InputTaskAdd />
       <TaskList />
 

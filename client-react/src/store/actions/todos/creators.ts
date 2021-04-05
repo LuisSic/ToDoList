@@ -1,13 +1,13 @@
 import { TodoTypes, TodoActionsTypes, Todo } from './types';
 
-export const setTodo = (newTodo: Todo): TodoActionsTypes => {
+export const setTask = (newTodo: Todo): TodoActionsTypes => {
   return {
     type: TodoTypes.SET_TODO,
     payload: newTodo,
   };
 };
 
-export const setTodos = (todos: Todo[]): TodoActionsTypes => {
+export const setTasks = (todos: Todo[]): TodoActionsTypes => {
   return {
     type: TodoTypes.FETCH_TODOS,
     payload: todos,
@@ -20,9 +20,16 @@ export const setLoading = (): TodoActionsTypes => {
   };
 };
 
-export const editTodo = (newTodo: Todo): TodoActionsTypes => {
+export const editTask = (newTodo: Todo): TodoActionsTypes => {
   return {
     type: TodoTypes.EDIT_TODO,
     payload: newTodo,
+  };
+};
+
+export const deleteTask = (id: string): TodoActionsTypes => {
+  return {
+    type: TodoTypes.DELETE_TODO,
+    payload: id,
   };
 };

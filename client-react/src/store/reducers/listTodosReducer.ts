@@ -90,6 +90,9 @@ export const todoListReducer = (
     case ListTodoTypes.REMOVE_ID_LIST:
       return {
         ...state,
+        myDay: state.myDay.filter((id) => id !== action.payload),
+        important: state.important.filter((id) => id !== action.payload),
+        all: state.all.filter((id) => id !== action.payload),
       };
     default:
       return state;

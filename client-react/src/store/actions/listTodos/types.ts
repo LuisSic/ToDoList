@@ -14,7 +14,7 @@ interface AddIdList {
 
 interface RemoveIdList {
   type: ListTodoTypes.REMOVE_ID_LIST;
-  payload: Todo;
+  payload: string;
 }
 
 interface AddTodosList {

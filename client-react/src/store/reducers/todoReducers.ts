@@ -32,6 +32,8 @@ export const todosReducer = (
         ...state,
         todos: { ...state.todos, [action.payload.id]: action.payload },
       };
+    case TodoTypes.DELETE_TODO:
+      return { ...state, todos: _.omit(state.todos, action.payload) };
     case TodoTypes.STATUS_LOADING:
       return { ...state, status: 'loading' };
     default:

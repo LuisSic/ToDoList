@@ -1,0 +1,26 @@
+.menu {
+  &-container {
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: rgb(0 0 0 / 13%) 0px 3.2px 7.2px 0px,
+      rgb(0 0 0 / 11%) 0px 0.6px 1.8px 0px;
+  }
+
+  &-item {
+    color: #767678;
+    font-size: 1.4rem;
+    &--delete {
+      color: red;
+    }
+  }
+
+  &-space {
+    margin-right: 1rem;
+  }
+}
+
+.icon-small {
+  min-width: 2rem;
+  width: 2rem;
+}

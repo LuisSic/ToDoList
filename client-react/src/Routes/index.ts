@@ -12,6 +12,5 @@ export enum TaskHeaderId {
   IMPORTANT = 'important',
   PLANNED = 'planned',
   ASIGNED_TO_ME = 'assigned_to_me',
-  FLAGGED_EMAIL = 'flagged_email',
   INBOX = 'inbox',
 }

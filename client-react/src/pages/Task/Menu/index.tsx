@@ -7,7 +7,6 @@ import { ReactComponent as Calendar } from '../../../img/task/calendar-outline.s
 import { ReactComponent as Home } from '../../../img/task/home-outline.svg';
 import { ReactComponent as Star } from '../../../img/task/star-outline.svg';
 import { ReactComponent as Sunny } from '../../../img/task/sunny-outline.svg';
-import { ReactComponent as Flag } from '../../../img/features/flag-outline.svg';
 import { ReactComponent as Person } from '../../../img/task/person-outline.svg';
 import { TaskHeaderId } from '../../../Routes';
 import { MenuItem } from './menuItem';
@@ -35,11 +34,6 @@ const svgList = [
     svg: Person,
     tabId: TaskHeaderId.ASIGNED_TO_ME,
     text: 'Assigned to you',
-  },
-  {
-    svg: Flag,
-    tabId: TaskHeaderId.FLAGGED_EMAIL,
-    text: 'Flagged email',
   },
   {
     svg: Home,

@@ -3,12 +3,19 @@ import { Action } from 'redux';
 import { RootState } from '../..';
 import { todoApi } from '../../../apis/todo';
 import { Todo } from './types';
-import { setTodo, setTodos, setLoading, editTodo } from './creators';
+import {
+  setTask,
+  setTasks,
+  setLoading,
+  editTask,
+  deleteTask,
+} from './creators';
 import {
   addTodosToList,
   addTodoToList,
   updateImportantList,
   updateMyDayList,
+  removeTodoToList,
 } from '../listTodos/creators';
 type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
@@ -46,7 +53,7 @@ export const createTodo = (data: PostTodo): AppThunk => async (dispatch) => {
       },
     });
 
-    dispatch(setTodo(response.data));
+    dispatch(setTask(response.data));
     dispatch(addTodoToList(response.data));
   } catch (err) {
     console.log(err);
@@ -68,7 +75,7 @@ export const fetchTodos = (token: string): AppThunk => async (
         Authorization: token,
       },
     });
-    dispatch(setTodos(response.data));
+    dispatch(setTasks(response.data));
     dispatch(addTodosToList(response.data));
   } catch (err) {
     console.log(err);
@@ -89,13 +96,29 @@ export const updateTodo = (
         },
       }
     );
-    dispatch(editTodo(response.data));
+    dispatch(editTask(response.data));
     if (typeUpdate === 'isImportant') {
       dispatch(updateImportantList(response.data));
     }
     if (typeUpdate === 'isMyDay') {
       dispatch(updateMyDayList(response.data));
     }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const deleteTodo = (idTodo: string, token: string): AppThunk => async (
+  dispatch
+) => {
+  try {
+    await todoApi.delete<Todo>(`/task/${idTodo}`, {
+      headers: {
+        Authorization: token,
+      },
+    });
+    dispatch(deleteTask(idTodo));
+    dispatch(removeTodoToList(idTodo));
   } catch (err) {
     console.log(err);
   }

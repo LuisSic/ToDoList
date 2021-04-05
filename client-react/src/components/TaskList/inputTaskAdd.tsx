@@ -5,7 +5,14 @@ import { createTodo } from '../../store/actions/todos/thunk';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useAppDispatch } from '../../store/hooks';
 
-export const InputTaskAdd = () => {
+interface InputTaskAddProps {
+  isImportant?: boolean;
+  isMyDay?: boolean;
+}
+export const InputTaskAdd = ({
+  isImportant = false,
+  isMyDay = false,
+}: InputTaskAddProps) => {
   const [inputValue, setInputValue] = useState<string>('');
   const [inputFocus, setInputFocus] = useState<boolean>(false);
   const { getIdTokenClaims } = useAuth0();
@@ -22,8 +29,8 @@ export const InputTaskAdd = () => {
         createTodo({
           todo: {
             title: inputValue,
-            isImportant: false,
-            isMyDay: false,
+            isImportant,
+            isMyDay,
           },
           token: token.__raw,
         })
@@ -36,9 +43,9 @@ export const InputTaskAdd = () => {
     <>
       <div className={`baseAdd baseAdd-${inputFocus ? 'focus' : ''}`}>
         {inputFocus ? (
-          <Cirle className="baseAdd__icon" />
+          <Cirle className="icon-small baseAdd__icon" />
         ) : (
-          <Add className="baseAdd__icon" />
+          <Add className="icon-small baseAdd__icon" />
         )}
 
         <input

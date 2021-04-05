@@ -21,8 +21,6 @@ export const MenuItem = ({ item, tabSelected, index }: MenuItemProps) => {
     switch (item.tabId) {
       case TaskHeaderId.ASIGNED_TO_ME:
         return state.listTodo.assigned_to_me;
-      case TaskHeaderId.FLAGGED_EMAIL:
-        return state.listTodo.flagged;
       case TaskHeaderId.IMPORTANT:
         return state.listTodo.important;
       case TaskHeaderId.INBOX:

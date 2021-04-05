@@ -15,10 +15,10 @@ export const addTodosToList = (todos: Todo[]): ListActionsTypes => {
   };
 };
 
-export const removeTodoToList = (newTodo: Todo): ListActionsTypes => {
+export const removeTodoToList = (idTodo: string): ListActionsTypes => {
   return {
     type: ListTodoTypes.REMOVE_ID_LIST,
-    payload: newTodo,
+    payload: idTodo,
   };
 };
 

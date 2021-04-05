@@ -1,8 +1,9 @@
 export enum TodoTypes {
-  SET_TODO = 'CREATE_TODO',
-  FETCH_TODOS = 'FETCH_TODOS',
-  EDIT_TODO = 'EDIT_TODO',
+  SET_TODO = 'CREATE_TASK',
+  FETCH_TODOS = 'FETCH_TASK',
+  EDIT_TODO = 'EDIT_TASL',
   STATUS_LOADING = 'TODO/LOADING',
+  DELETE_TODO = 'DELETE_TASK',
 }
 
 export type StatusTask = 'COMPLETED' | 'DELETED' | 'NOT_FINISH';
@@ -32,7 +33,17 @@ interface EditTodo {
   payload: Todo;
 }
 
+interface DeleteTodo {
+  type: TodoTypes.DELETE_TODO;
+  payload: string;
+}
+
 interface TodosLoading {
   type: TodoTypes.STATUS_LOADING;
 }
-export type TodoActionsTypes = SetTodo | FetchTodos | TodosLoading | EditTodo;
+export type TodoActionsTypes =
+  | SetTodo
+  | FetchTodos
+  | TodosLoading
+  | EditTodo
+  | DeleteTodo;
