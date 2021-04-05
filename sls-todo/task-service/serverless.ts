@@ -6,6 +6,7 @@ import {
   getTask,
   getTasks,
   updateStatusTask,
+  deleteTask,
 } from './src/functions';
 
 const serverlessConfiguration: AWS = {
@@ -47,7 +48,7 @@ const serverlessConfiguration: AWS = {
       TaskTable,
     },
   },
-  functions: { createTask, getTask, getTasks, updateStatusTask },
+  functions: { createTask, getTask, getTasks, updateStatusTask, deleteTask },
 };
 
 module.exports = serverlessConfiguration;
