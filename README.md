@@ -12,6 +12,7 @@ You can see this app in the next url: https://to-do-list-sluis117.vercel.app/
 - Aws (ApiGateway, lambda Functions)
 - Auth0 https://auth0.com/
 - Vercel https://vercel.com/
+- Sass
 
 ### Architecture
 
