@@ -1,6 +1,6 @@
 # ToDoList
 
-This is a Todo app
+You can see this app in the next url: https://to-do-list-sluis117.vercel.app/
 
 ### What technologies I used?
 
@@ -11,11 +11,11 @@ This is a Todo app
 - DynamoDb
 - Aws (ApiGateway, lambda Functions)
 - Auth0 https://auth0.com/
+- Vercel https://vercel.com/
 
 ### Architecture
 
 <img src="./resources/TodoList.png" title="Architecture">
-
 
 ## What I learned?
 
