@@ -77,18 +77,6 @@ export const Menu = () => {
   const renderOptions = svgList.map((svgItem, index) => {
     return (
       <MenuItem key={index} item={svgItem} index={index} tabSelected={tabId} />
-      /*
-      <li
-        className={`navbar__item ${tabId === svgItem.tabId ? 'active' : ''}`}
-        onClick={() => setTabAndHistory(`/task/${svgItem.tabId}`)}
-        key={index}
-      >
-        <svgItem.svg
-          className={`navbar__item-icon navbar__item-icon--${index + 1}`}
-        />
-        <span className="navbar__item-text">{svgItem.text}</span>
-      </li>
-      */
     );
   });
 
